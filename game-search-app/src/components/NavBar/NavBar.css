@@ -1,0 +1,9 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: brown;
+}
+.navbar_logo{
+    width: 60px;
+}
