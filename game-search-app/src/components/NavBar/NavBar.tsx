@@ -1,4 +1,5 @@
 import logo from '../../assets/logo.webp';
+import ColorModeSwitch from '../ColorModeSwitch/ColoModeSwitch';
 import  './NavBar.css'
 
 const NavBar = () => {
@@ -6,6 +7,7 @@ const NavBar = () => {
     <div className="navbar">
         <img className="navbar_logo" src={logo} alt="logo" />
         <h1>Navbar</h1>
+        <ColorModeSwitch initialColorMode='dark'/>
     </div>
   )
 }

@@ -1,0 +1,112 @@
+/* .color-mode-switch {
+  display: inline-block;
+  position: relative;
+}
+
+.color-switch-checkbox {
+  display: none;
+}
+
+.color-switch-label {
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+  padding: 4px;
+  border-radius: 20px;
+  background-color: #ddd;
+  position: relative;
+}
+
+.color-switch-inner {
+  display: inline-block;
+  width: 32px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 16px;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.color-switch-switch {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: #333;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: left 0.3s, background-color 0.3s;
+}
+
+.color-mode-label {
+  margin-left: 8px;
+  font-weight: bold;
+} */
+
+/* Common styles for both light and dark modes */
+.color-mode-switch {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .color-switch-checkbox {
+    display: none;
+  }
+  
+  .color-switch-label {
+    /* display: inline-block; */
+    cursor: pointer;
+    user-select: none;
+    padding: 4px;
+    border-radius: 20px;
+    /* background-color: #ddd; */
+    position: relative;
+  }
+  
+  .color-switch-inner {
+    display: inline-block;
+    width: 32px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 16px;
+    position: relative;
+    transition: background-color 0.3s;
+  }
+  
+  .color-switch-switch {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: #333;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: left 0.3s, background-color 0.3s;
+  }
+  
+  .color-mode-label {
+    margin-left: 8px;
+    font-weight: bold;
+  }
+  
+  /* Styles specific to light mode */
+  .color-mode-switch.light {
+    background-color: #fff;
+  }
+  
+  /* Styles specific to dark mode */
+  .color-mode-switch.dark {
+    /* background-color: #333; */
+    color: #fff;
+  }
+  
+  .color-mode-switch.dark .color-switch-inner {
+    background-color: #333;
+  }
+  
+  .color-mode-switch.dark .color-switch-switch {
+    background-color: #fff;
+  }
+  

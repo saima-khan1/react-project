@@ -1,0 +1,5 @@
+.genres{
+    display: flex;
+    background-color: aqua;
+    flex-basis: 30%;
+}

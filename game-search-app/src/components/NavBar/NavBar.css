@@ -3,6 +3,7 @@
     align-items: center;
     padding: 10px;
     background-color: brown;
+    justify-content: space-between;
 }
 .navbar_logo{
     width: 60px;
