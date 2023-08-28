@@ -1,23 +1,20 @@
-import apiClient from '../../services/api-client'
+import useGames from '../../hooks/useGames'
 import './GamesSection.css'
 
-interface Game{
-  id : number;
-  name : string
-}
- 
-interface FetchGamesResponse{
-  count : number;
-  results : Game[];
-}
-
-
 const GamesSection = () => {
-  apiClient.get<FetchGamesResponse>('/games')
-  .then((res)=> console.log(res.data.results));
-
+  const {games, error} = useGames();
   return (
-    <div className='games-section'>GamesSection</div>
+    <>
+      <div className='games-section'>
+      {error && <p>{error}</p>}
+      <ul>
+      {games.map((game) => (
+          <li key={game.id}>{game.name}</li>
+        ))}
+      </ul>
+    </div>
+    </>
+    
   )
 }
 
