@@ -1,6 +1,20 @@
 .games-section{
     display: flex;
-
     flex-basis: 70%;
+    flex-wrap: wrap;
+    margin-right: 20px;
+
 
 }
+.game-cards{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 0 24px;
+}
+
+/* .game-cards img{
+    
+} */
+/* .game-cards h2{
+    font-size: small;
+} */
