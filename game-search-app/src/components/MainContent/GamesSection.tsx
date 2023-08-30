@@ -1,4 +1,5 @@
 import useGames from '../../hooks/useGames'
+import GameCard from '../CardComponent/GameCard';
 import './GamesSection.css'
 
 const GamesSection = () => {
@@ -6,13 +7,13 @@ const GamesSection = () => {
   return (
     <>
       <div className='games-section'>
-      {error && <p>{error}</p>}
-      <ul>
-      {games.map((game) => (
-          <li key={game.id}>{game.name}</li>
-        ))}
-      </ul>
-    </div>
+        {error && <p>{error}</p>}
+          <div className='game-cards'>
+            {games.map((game) => (
+              <GameCard key={game.id} game={game}/>
+            ))}
+          </div>
+      </div>
     </>
     
   )

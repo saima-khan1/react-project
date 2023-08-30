@@ -1,0 +1,42 @@
+/* Card.module.css */
+.card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-width: 0px;
+    word-wrap: break-word;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 300px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    margin-top: 10px;
+  }
+  
+  .cardImg{
+    max-width: 100%; /* Set the width to 250px */
+    height: auto;
+    object-fit: cover; /* Maintain aspect ratio and cover the entire space */
+
+  }
+  
+  .cardBody{
+    padding: 16px;
+    flex: 1 1 0%;
+
+  }
+  
+  .cardHeading {
+    font-size: small;
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-bottom: 2px;
+  }
+  .platformIcon {
+    color: #898989;
+    background-color: red;
+  }
+  
