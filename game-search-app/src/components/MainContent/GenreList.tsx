@@ -4,16 +4,17 @@ import './GenreList.css'
 
 interface Props{
   onSelectGenre: (genre: Genre)=> void;
+  selectedGenre: Genre | null;
 }
 
-const GenreList = ({onSelectGenre}: Props) => {
+const GenreList = ({selectedGenre, onSelectGenre }: Props) => {
   const {data} =useGenres();
   return (
     <div className="genres">
       <ul>{data.map((genre)=><li key={genre.id}>
         <div className='genre-list'>
           <img src={getCroppedImageUrl(genre.image_background)}  />
-          <button onClick={()=>onSelectGenre(genre)}  type='button'>{genre.name}</button>
+          <button style={{ fontWeight: genre.id === selectedGenre?.id ? 'bold' : 'normal' }} onClick={()=>onSelectGenre(genre)}  type='button'>{genre.name}</button>
         </div>
         </li>)} 
         </ul>

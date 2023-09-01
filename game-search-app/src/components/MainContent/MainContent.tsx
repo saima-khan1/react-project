@@ -9,7 +9,7 @@ const MainContent = () => {
   const [selectedGenre , setSelectedGenre] = useState<Genre | null>(null);
   return (
     <div className='main-conent'>
-        <GenreList onSelectGenre={(genre)=> setSelectedGenre(genre)} />
+        <GenreList selectedGenre={selectedGenre} onSelectGenre={(genre)=> setSelectedGenre(genre)} />
         <GamesSection  selectedGenre={selectedGenre}/>
     </div>
   )
