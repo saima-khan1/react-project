@@ -1,5 +1,6 @@
 
 import useData from "./useData";
+import { Genre } from "./useGenres";
 
  export interface Platform {
     id: number;
@@ -16,9 +17,10 @@ import useData from "./useData";
   }
    
  
-const useGames = ()=> useData<Game>('/games');
-   
+const useGames = (selectedGenre: Genre | null )=> {
+  const queryParams = selectedGenre ? { genres: selectedGenre.id } : undefined;
 
-
+  return useData<Game>('/games', undefined, undefined, queryParams, [selectedGenre?.id]);
+}
 
 export default useGames;

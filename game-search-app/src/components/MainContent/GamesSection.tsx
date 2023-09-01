@@ -1,9 +1,14 @@
 import useGames from '../../hooks/useGames'
+import { Genre } from '../../hooks/useGenres';
 import GameCard from '../CardComponent/GameCard';
 import './GamesSection.css'
 
-const GamesSection = () => {
-  const {data , error} = useGames();
+interface Props{
+  selectedGenre: Genre | null;
+}
+
+const GamesSection = ({selectedGenre}:Props) => {
+  const {data , error} = useGames(selectedGenre);
   return (
     <>
       <div className='games-section'>
