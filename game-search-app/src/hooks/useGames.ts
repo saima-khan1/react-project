@@ -17,10 +17,20 @@ import { Genre } from "./useGenres";
   }
    
  
-const useGames = (selectedGenre: Genre | null )=> {
-  const queryParams = selectedGenre ? { genres: selectedGenre.id } : undefined;
-
-  return useData<Game>('/games', undefined, undefined, queryParams, [selectedGenre?.id]);
+const useGames = (selectedGenre: Genre | null , selectedPlatform: Platform | null )=> {
+ 
+  let queryParams: Record<string, string | number> | undefined;
+  if (selectedGenre && selectedPlatform) {
+    queryParams = { genres: selectedGenre.id, platforms: selectedPlatform.id };
+    console.log('selectedGenre && selectedPlatform', queryParams);
+  } else if (selectedGenre) {
+    queryParams = { genres: selectedGenre.id };
+    console.log('selectedGenre', queryParams);
+  } else if (selectedPlatform) {
+    queryParams = { platforms: selectedPlatform.id };
+    console.log('selectedPlatform', queryParams);
+  }
+  return useData<Game>('/games', undefined, undefined, queryParams, [selectedGenre?.id, selectedPlatform?.id]);
 }
 
 export default useGames;

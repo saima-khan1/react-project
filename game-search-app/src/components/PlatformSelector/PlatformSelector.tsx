@@ -1,21 +1,31 @@
+import { Platform } from "../../hooks/useGames";
 import usePlatforms from "../../hooks/usePlatforms";
 import Dropdown from "./DropDown"
+interface Props{
+    onSelectPlatform:(platform : Platform ) => void;
+    selectedPlatform: Platform | null;
+}
 
-
-const PlatformSelector = () => {
-    //const options = ['Option 1', 'Option 2', 'Option 3'];
- // const [selectedOption, setSelectedOption] = useState<string | null>(null);
-
-//   const handleSelect = (option: string) => {
-//     setSelectedOption(option);
+const PlatformSelector = ({onSelectPlatform, selectedPlatform}: Props) => {
 
 const {data , error}  = usePlatforms();
 if(error) return null;
-const options = data.map((Platform)=> Platform.name );
-console.log('platform', options)
   return (
-   <Dropdown options={options}/>
+    <>
+
+    <Dropdown
+      options={data.map((platform) => platform.name)}
+      onClick={(option) => {
+        const selectedPlatform = data.find((platform) => platform.name === option);
+        if (selectedPlatform) {
+          onSelectPlatform(selectedPlatform);
+        }
+      }}
+    >
+      {selectedPlatform?.name || 'Platforms'}
+    </Dropdown>
+    </>
   )
 }
 
-export default PlatformSelector
+export default PlatformSelector;

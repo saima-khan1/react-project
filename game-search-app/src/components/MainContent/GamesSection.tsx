@@ -1,14 +1,16 @@
 import useGames from '../../hooks/useGames'
 import { Genre } from '../../hooks/useGenres';
+import { Platform } from '../../hooks/usePlatforms';
 import GameCard from '../CardComponent/GameCard';
 import './GamesSection.css'
 
 interface Props{
   selectedGenre: Genre | null;
+  selectedPlatform: Platform | null;
 }
 
-const GamesSection = ({selectedGenre}:Props) => {
-  const {data , error} = useGames(selectedGenre);
+const GamesSection = ({selectedGenre, selectedPlatform}:Props) => {
+  const {data , error} = useGames(selectedGenre ,selectedPlatform);
   return (
     <>
       <div className='games-section'>
