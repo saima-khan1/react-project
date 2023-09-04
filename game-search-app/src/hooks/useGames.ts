@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
-import ApiService from "../services/api-client";
+
+import useData from "./useData";
+import { Genre } from "./useGenres";
 
  export interface Platform {
     id: number;
@@ -12,31 +13,24 @@ import ApiService from "../services/api-client";
     name : string;
     background_image:string;
     parent_platforms: {platform: Platform}[];
-    metacritic:number;
+    metacritic:number
   }
    
-  interface FetchGamesResponse{
-    count : number;
-    results : Game[];
+ 
+const useGames = (selectedGenre: Genre | null , selectedPlatform: Platform | null )=> {
+ 
+  let queryParams: Record<string, string | number> | undefined;
+  if (selectedGenre && selectedPlatform) {
+    queryParams = { genres: selectedGenre.id, platforms: selectedPlatform.id };
+    console.log('selectedGenre && selectedPlatform', queryParams);
+  } else if (selectedGenre) {
+    queryParams = { genres: selectedGenre.id };
+    console.log('selectedGenre', queryParams);
+  } else if (selectedPlatform) {
+    queryParams = { platforms: selectedPlatform.id };
+    console.log('selectedPlatform', queryParams);
   }
-const useGames = ()=> {
-    const [games, setGames] = useState<Game[]>([]);
-    const [error, setError] = useState("");
-
-    useEffect (()=> {
-        const controller = new AbortController();
-        ApiService.get<FetchGamesResponse>("/games", { signal: controller.signal })
-        .then((res)=> {
-
-            setGames(res.data.results)
-        }).catch((error) => {
-            if(error.name === 'AbortError') return;
-            setError(error.message)
-        });
-        return () => controller.abort();
-    },[]);
-    return {games, error};
-
+  return useData<Game>('/games', undefined, undefined, queryParams, [selectedGenre?.id, selectedPlatform?.id]);
 }
 
 export default useGames;

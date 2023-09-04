@@ -3,18 +3,20 @@
     flex-basis: 70%;
     flex-wrap: wrap;
     margin-right: 20px;
-
-
 }
-.game-cards{
+
+.game-cards {
     display: grid;
     grid-template-columns: auto auto auto;
-    grid-gap: 0 24px;
-}
-
-/* .game-cards img{
-    
-} */
-/* .game-cards h2{
-    font-size: small;
-} */
+    grid-gap: 0 24px; 
+  
+    /* For screens smaller than 1024px (laptop) */
+    @media (max-width: 1023px) {
+      grid-template-columns: auto auto; /* 2 columns */
+    }
+  
+    /* For screens smaller than 768px (tablet/mobile) */
+    @media (max-width: 620px) {
+      grid-template-columns: auto; /* 1 column */
+    }
+  }
