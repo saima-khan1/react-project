@@ -1,13 +1,21 @@
 .genres{
     display: flex;
+    flex-direction: column;
     flex-basis: 30%;
+    margin: 0px;
     @media (max-width: 620px) {
         display: none;
       }
 }
+.genres h2{
+    margin: 0px;
+    margin-left: 20px;
+}
 .genres ul{
     list-style-type: none;
     padding: 0;
+    margin: 0;
+
 }
 .genre-list{
     display: flex;

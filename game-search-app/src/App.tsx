@@ -1,12 +1,12 @@
 
 import './App.css'
-import MainContent from './components/MainContent/MainContent'
-import NavBar from './components/NavBar/NavBar'
+import MainContent from './components/MainContent/MainContent';
 
 function App() {
+
   return (
     <>
-    <NavBar/>
+    {/* <NavBar/> */}
     <MainContent/>
     </>
     
@@ -14,3 +14,10 @@ function App() {
 }
 
 export default App
+
+
+
+
+
+
+
