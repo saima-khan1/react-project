@@ -48,4 +48,6 @@
     margin: 0 10px; /* Add some spacing between the icon and the input */
     color: #aaa; /* Color of the icon */
   }
-  
+  .search-bar{
+   width: 100%;
+  }

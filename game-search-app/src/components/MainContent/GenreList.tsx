@@ -10,7 +10,10 @@ interface Props{
 const GenreList = ({selectedGenre, onSelectGenre }: Props) => {
   const {data} =useGenres();
   return (
+    <>
+    
     <div className="genres">
+    <h2>Genres</h2>
       <ul>{data.map((genre)=><li key={genre.id}>
         <div className='genre-list'>
           <img src={getCroppedImageUrl(genre.image_background)}  />
@@ -19,7 +22,7 @@ const GenreList = ({selectedGenre, onSelectGenre }: Props) => {
         </li>)} 
         </ul>
     </div>
-
+    </>
   )
 }
 
