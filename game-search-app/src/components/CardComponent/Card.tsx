@@ -1,10 +1,9 @@
 import React, { ReactNode } from 'react';
 import styles from './Card.module.css';
 
-
 interface CardProps {
   imgSrc: string;
-  heading: string;
+  heading: ReactNode;
   children: ReactNode;
   emoji: ReactNode;
 }
@@ -17,10 +16,11 @@ const Card: React.FC<CardProps> = ({ imgSrc, heading, children, emoji }) => {
         {/* <h2 className={styles.cardHeading}>{heading}</h2> */}
 
         {children}
-        <h2 className={styles.cardHeading}>{heading} {emoji}</h2>
+        <h2 className={styles.cardHeading}>
+          {heading} {emoji}
+        </h2>
       </div>
     </div>
-    
   );
 };
 
