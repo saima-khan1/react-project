@@ -1,14 +1,7 @@
-import { GameQuery } from "../MainContent/MainContent"
-
-interface Props{
-    gameQuery:GameQuery;
-}
-const GameHeading = ({gameQuery}:Props) => {
-    const Heading=`${gameQuery.platform?.name || ''} ${gameQuery.genre?.name || ''}`
-  return (
-
-  <h1 className="game-heading">{Heading}</h1>
-  )
-}
-
-export default GameHeading
+import { useGame } from '../../ManageState';
+const GameHeading = () => {
+  const { state } = useGame();
+  const Heading = `${state.platform?.name || ''} ${state.genre?.name || ''}`;
+  return <h1 className="game-heading">{Heading}</h1>;
+};
+export default GameHeading;

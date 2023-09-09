@@ -1,30 +1,21 @@
-import useGames from '../../hooks/useGames'
-
+import useGames from '../../hooks/useGames';
 import GameCard from '../CardComponent/GameCard';
-import './GamesSection.css'
-import { GameQuery } from './MainContent';
-
-interface Props{
-  gameQuery:GameQuery ;
-//   selectedGenre: Genre | null;
-//   selectedPlatform: Platform | null;
- }
-
-const GamesSection = ({gameQuery}:Props) => {
-  const {data , error} = useGames(gameQuery);
+import './GamesSection.css';
+import { useGame } from '../../ManageState';
+const GamesSection = () => {
+  const { state } = useGame();
+  const { data, error } = useGames(state);
   return (
     <>
-      <div className='games-section'>
+      <div className="games-section">
         {error && <p>{error}</p>}
-          <div className='game-cards'>
-            {data.map((game) => (
-              <GameCard key={game.id} game={game}/>
-            ))}
-          </div>
+        <div className="game-cards">
+          {data.map((game) => (
+            <GameCard key={game.id} game={game} />
+          ))}
+        </div>
       </div>
     </>
-    
-  )
-}
-
-export default GamesSection
+  );
+};
+export default GamesSection;

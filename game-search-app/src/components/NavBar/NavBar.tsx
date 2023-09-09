@@ -1,31 +1,29 @@
 import { useEffect, useState } from 'react';
 import logo from '../../assets/logo.webp';
 import ColorModeSwitch from '../ColorModeSwitch/ColoModeSwitch';
-import  './NavBar.css'
+import './NavBar.css';
 import SearchInput from '../SearchIcon/SearchInput';
-interface Props{
-  onSearch: (searchText: string )=> void;
-}
-
-const NavBar = ({onSearch}: Props) => {
+import { useGame } from '../../ManageState';
+const NavBar = () => {
+  const { dispatch } = useGame();
   const storedMode = localStorage.getItem('mode');
-  const [darkMode , setDarkMode]=useState(storedMode === 'dark');
-  useEffect(()=>{
+  const [darkMode, setDarkMode] = useState(storedMode === 'dark');
+  useEffect(() => {
     document.body.className = darkMode ? 'dark-mode' : 'light-mode';
-    localStorage.setItem('mode' , darkMode ? 'dark' : 'light')
-  } , [darkMode]) ;
+    localStorage.setItem('mode', darkMode ? 'dark' : 'light');
+  }, [darkMode]);
   const toggleMode = () => {
     setDarkMode(!darkMode);
   };
+  const handleSearch = (searchText: string) => {
+    dispatch({ type: 'SET_SEARCH_TEXT', searchText });
+  };
   return (
     <div className="navbar">
-        <img className="navbar_logo" src={logo} alt="logo" />
-        <SearchInput onSearch={onSearch}/>
-        <ColorModeSwitch  darkMode={darkMode} toggleMode={toggleMode}/>
-        
+      <img className="navbar_logo" src={logo} alt="logo" />
+      <SearchInput onSearch={handleSearch} />
+      <ColorModeSwitch darkMode={darkMode} toggleMode={toggleMode} />
     </div>
-  )
-}
-
-export default NavBar
-
+  );
+};
+export default NavBar;
