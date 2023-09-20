@@ -1,4 +1,5 @@
-import useGenres, { Genre } from '../../hooks/useGenres';
+import useGenres from '../../hooks/useGenres';
+import { Genre } from "../../Entities/Genre";
 import getCroppedImageUrl from '../../services/image-urls';
 import './GenreList.css';
 import { useGame } from '../../ManageState';
@@ -18,11 +19,12 @@ const GenreList = () => {
             <li key={genre.id}>
               <div className="genre-list">
                 <img src={getCroppedImageUrl(genre.image_background)} />
-                <button
+                <button 
                   style={{
                     fontWeight:
                       genre.id === state.genre?.id ? 'bold' : 'normal',
-                  }}
+                      
+                  }} 
                   onClick={() => handleGenreSelect(genre)}
                   type="button"
                 >

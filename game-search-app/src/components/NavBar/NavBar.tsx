@@ -4,6 +4,7 @@ import ColorModeSwitch from '../ColorModeSwitch/ColoModeSwitch';
 import './NavBar.css';
 import SearchInput from '../SearchIcon/SearchInput';
 import { useGame } from '../../ManageState';
+import { Link } from 'react-router-dom';
 const NavBar = () => {
   const { dispatch } = useGame();
   const storedMode = localStorage.getItem('mode');
@@ -19,8 +20,8 @@ const NavBar = () => {
     dispatch({ type: 'SET_SEARCH_TEXT', searchText });
   };
   return (
-    <div className="navbar">
-      <img className="navbar_logo" src={logo} alt="logo" />
+    <div className="navbar"><Link to='/'>
+      <img className="navbar_logo" src={logo} alt="logo" /></Link>
       <SearchInput onSearch={handleSearch} />
       <ColorModeSwitch darkMode={darkMode} toggleMode={toggleMode} />
     </div>

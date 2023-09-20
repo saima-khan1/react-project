@@ -1,0 +1,12 @@
+.expandable-btn{
+    width: 100px;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(240, 240, 116);
+    font-weight: 600;
+    margin-left: 3px;
+}
+.game-description{
+    line-height: 2;
+}

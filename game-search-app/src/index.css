@@ -1,5 +1,75 @@
-.main-conent {
+/* .main-conent {
     display: flex;
     width: 100%;
-    height: 100vmax;
+    height: auto;
+    justify-content: center;
+  } */
+  .main-conent {
+    display: grid;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    grid-template-columns: 25% 75%;
+    justify-items: center;
   }
+  .score-badge{
+    max-width: fit-content;
+    padding: 4px;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+.game-detail-row2{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 20px;
+  margin-top: 50px;
+
+}
+.game-trailer{
+  display: flex;
+    align-items: center;
+}
+.game-video{
+  width: 350px;
+    display: flex;
+    align-items: center;
+}
+.game-attribute{
+ display: grid;
+ grid-template-columns: auto auto;
+}
+
+.game-video-null{
+  width: 350px;
+  height: 281.5px;
+  background-color: grey;
+  color: white;
+  text-align: center;
+  font-weight: 100;
+  font-size: larger;
+}
+.game-detail-page{
+  height: 104vh;
+}
+
+
+
+@media (max-width: 620px){
+
+  .main-conent{
+    grid-template-columns: 100%;
+  }
+  .game-detail-row2{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px
+  }
+  .col2-game-trailer{
+    display: flex;
+    justify-content: center;
+  }
+  .game-attribute{
+    justify-content: space-between;
+   }
+
+}
