@@ -1,4 +1,4 @@
-import { Game } from '../../hooks/useGames';
+import { Game } from '../../Entities/Game';
 import getCroppedImageUrl from '../../services/image-urls';
 import CriticScore from '../CriticScore/CriticScore';
 import Emoji from '../Emoji/Emoji';

@@ -1,15 +1,14 @@
 .navbar {
     display: flex;
     align-items: center;
-    padding: 10px;
-  
     justify-content: space-between;
+    margin: 20px;
 }
 .navbar_logo{
     width: 60px;
 }
 .dark-mode{
-    background-color: black;
+    background-color: #1e1d1d;;
     color: white;
 }
 

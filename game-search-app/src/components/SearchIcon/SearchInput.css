@@ -22,7 +22,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-basis: 80%;
+    flex-basis: 70%;
+    margin: 10px;
+    margin-right: 17px;
 
   }
   

@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useReducer, ReactNode } from 'react';
 import { Platform } from '../hooks/useGames';
-import { Genre } from '../hooks/useGenres';
+import { Genre } from "../Entities/Genre";
 
 export interface GameState {
   genre: Genre | null;

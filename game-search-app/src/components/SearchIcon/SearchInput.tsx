@@ -1,6 +1,7 @@
 import './SearchInput.css';
 import searchIcon from '../../assets/Icons/searchIcon.svg'
 import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export interface Props{
      onSearch: (searchText: string )=>void;
@@ -8,12 +9,17 @@ export interface Props{
 
 const SearchInput = ({onSearch}: Props) => {
     const ref = useRef<HTMLInputElement>(null);
+    const navigate = useNavigate();
     return (
       
         <>
          <form className='search-bar' onSubmit={(event)=>{
             event.preventDefault();
-            if(ref.current) return  onSearch(ref.current.value);
+            if(ref.current) {
+                onSearch(ref.current.value);
+            navigate('/')
+
+            } 
         }}>
         <div className='search-container'>
             <div className='search-box'>

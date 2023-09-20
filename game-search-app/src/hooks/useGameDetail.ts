@@ -1,5 +1,5 @@
 import ApiService from '../services/api-client';
-import { Game } from './useGames';
+import { Game } from '../Entities/Game';
 
 const useGameDetail = (slug: string) => {
   const getGameDetail = async () => {
