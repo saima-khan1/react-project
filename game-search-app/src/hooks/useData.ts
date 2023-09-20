@@ -15,7 +15,7 @@ const useData = <T>(
 ) => {
   const [data, setData] = useState<T[]>([]);
   const [error, setError] = useState('');
-  //const [isLoading, setLoading] = useState(false);
+  const [isLoading, setLoading] = useState(false);
 
   useEffect(
     () => {
@@ -24,7 +24,7 @@ const useData = <T>(
 
       //const requestOptions: RequestInit = options || {};
 
-      //setLoading(true);
+      setLoading(true);
       ApiService.get<FetchResponse<T>>(
         endpoint,
         options,
@@ -33,12 +33,12 @@ const useData = <T>(
       )
         .then((res) => {
           setData(res.data.results);
-          //setLoading(false);
+          setLoading(false);
         })
         .catch((err) => {
           if (err.name === 'AbortError') return; // Checking for AbortError
           setError(err.message);
-          //setLoading(false);
+          setLoading(false);
         });
 
       return () => controller.abort();
@@ -46,7 +46,7 @@ const useData = <T>(
     deps ? [...deps] : []
   );
 
-  return { data, error };
+  return { data, error, isLoading };
 };
 
 export default useData;
