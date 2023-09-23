@@ -80,4 +80,7 @@
    .gamedetail-grid{
     grid-template-columns: auto;
   }
+  .screenshot{
+    grid-template-columns: auto;
+  }
 }
