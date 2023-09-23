@@ -1,7 +1,7 @@
+
 .game-heading{
     margin-top: 36px;
 }
-
 @media (max-width: 620px) {
     .game-heading {
     font-size: 1.5rem;

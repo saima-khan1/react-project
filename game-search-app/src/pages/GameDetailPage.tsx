@@ -6,6 +6,9 @@ import ExpandableText from '../components/ExpandableText/ExpandableText';
 
 import GameAttributes from '../components/GameAttributes';
 import { GameTrailer } from '../components/GameTrailer';
+import LoadingSpinner from '../components/SkeletonComponent/LoadingSpinner';
+import GameScreenshots from '../components/GameScreenshots';
+import '../index.css';
 // import GameScreenshots from '../components/GameScreenshots';
 
 const GameDetailPage = () => {
@@ -34,22 +37,42 @@ const GameDetailPage = () => {
   }
 
   if (!game) {
-    return <div>Loading...</div>;
+            
+    return <LoadingSpinner/>;
   }
 
   return (
-    <div className='game-detail-page'>
-      <div className='game-detail-row1'>
-        <h1>{game.name}</h1>
+    // <div className='game-detail-page'>
+    //   <div className='game-detail-row1'>
+    //     {/* <h1>{game.name}</h1>
+    //     <ExpandableText>{game.description_raw}</ExpandableText> */}
+    //   </div>
+    //   <div className='game-detail-row2'>
+    //       <div className='col1-game-attribute'>
+    //       <h1>{game.name}</h1>
+    //       <ExpandableText>{game.description_raw}</ExpandableText>
+    //         <GameAttributes game={game}/>
+    //       </div>
+    //       <div className='col2-game-trailer'>
+    //         <GameTrailer gameId={game.id}/>
+    //         <div className='game-screenshots'>
+    //         <GameScreenshots gameId={game.id} />
+    //       </div>
+    //       </div>
+    //   </div>
+    //   {/* <div className='game-screenshots'>
+    //         <GameScreenshots gameId={game.id} />
+    //       </div> */}
+    // </div>
+    <div className='gamedetail-grid'>
+      <div className='gamedetail-right-col'>
+        <h1 className='gamedetail-heading'>{game.name}</h1>
         <ExpandableText>{game.description_raw}</ExpandableText>
+        <GameAttributes game={game}/>
       </div>
-      <div className='game-detail-row2'>
-          <div className='col1-game-attribute'>
-            <GameAttributes game={game}/>
-          </div>
-          <div className='col2-game-trailer'>
-            <GameTrailer gameId={game.id}/>
-          </div>
+      <div className='gamedetail-left-col'>
+        <GameTrailer gameId={game.id}/>
+        <GameScreenshots gameId={game.id}/>
       </div>
     </div>
   );
