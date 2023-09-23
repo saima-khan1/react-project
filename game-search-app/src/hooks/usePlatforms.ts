@@ -1,4 +1,4 @@
-import { Platform } from "../Entities/Platform";
+import  Platform  from "../Entities/Platform";
 import useData from "./useData";
 
 

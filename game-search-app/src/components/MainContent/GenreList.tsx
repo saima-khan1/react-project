@@ -1,5 +1,5 @@
 import useGenres from '../../hooks/useGenres';
-import { Genre } from "../../Entities/Genre";
+import  Genre  from "../../Entities/Genre";
 import getCroppedImageUrl from '../../services/image-urls';
 import './GenreList.css';
 import { useGame } from '../../ManageState';
@@ -16,7 +16,7 @@ const GenreList = () => {
       <div className="genres">
         <h2>Genres</h2>
         {isLoading ? (
-        <GenreListSkeleton itemCount={5} /> // Adjust itemCount as needed
+        <GenreListSkeleton itemCount={5} />
       ): 
         <ul>
           {data.map((genre) => (

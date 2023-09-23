@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import useScreenshots from "../hooks/useScreenshots";
-import { Screenshot } from "../Entities/Screenshot";
+import Screenshot  from "../Entities/Screenshot";
 
 interface Props{
     gameId: number;
