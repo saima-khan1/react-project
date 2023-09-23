@@ -1,5 +1,5 @@
 import { GameQuery } from '../sharedType';
-import { Game } from '../Entities/Game';
+import  Game  from '../Entities/Game';
 import useData from './useData';
 
 export interface Platform {
