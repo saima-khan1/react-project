@@ -2,7 +2,7 @@ import { Game } from '../../Entities/Game';
 import getCroppedImageUrl from '../../services/image-urls';
 import CriticScore from '../CriticScore/CriticScore';
 import Emoji from '../Emoji/Emoji';
-import PlatformIconList from '../PlatformIconList';
+import PlatformIconList from '../../components/PlatFromIconList/PlatformIconList';
 import Card from './Card';
 import './GameCard.css';
 import { Link } from 'react-router-dom';

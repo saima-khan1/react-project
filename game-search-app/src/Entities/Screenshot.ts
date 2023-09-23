@@ -5,4 +5,5 @@ export interface Screenshot{
     width:number;
     height:number;
     data: {480: string, max: string};
+    results:[]| null;
 }
