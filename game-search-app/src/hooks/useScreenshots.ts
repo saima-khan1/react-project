@@ -1,14 +1,7 @@
 import ApiService from '../services/api-client';
-import { Screenshot } from '../Entities/Screenshot';
+import Screenshot from '../Entities/Screenshot';
 
 const useScreenshots = async (gameId: number) => 
-// {
-//     const response = await ApiService.get<Trailer>(`/games/${gameId}/movies`);
-//     const data = response.data
-//     console.log('response', data);
-    
-//     return (data);
-//   };
 {
   try {
     const response = await ApiService.get<Screenshot>(`/games/${gameId}/screenshots`);

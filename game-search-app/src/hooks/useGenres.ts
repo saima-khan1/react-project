@@ -1,4 +1,4 @@
-import { Genre } from "../Entities/Genre";
+import Genre  from "../Entities/Genre";
 import useData from "./useData";
 
 const useGenres = () => useData<Genre>('/genres');
