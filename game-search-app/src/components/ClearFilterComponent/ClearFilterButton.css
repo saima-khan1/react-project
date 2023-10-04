@@ -1,0 +1,28 @@
+.clear-filter{
+    display: grid;
+    position: relative;
+    @media (max-width: 620px) {
+        justify-items: center;
+        margin-top: 20px;
+      }
+}
+.clear-filter-button{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: inherit;
+    align-items: center;
+    z-index: 1;
+    border-radius: 10px;
+    width: 120px;
+    color: inherit;
+    @media (max-width: 620px) {
+        width: 80%;
+      }
+}
+
+#close-icon{
+    color: #898989;
+}

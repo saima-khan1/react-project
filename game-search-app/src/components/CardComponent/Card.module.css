@@ -5,7 +5,7 @@
     position: relative;
     min-width: 0px;
     word-wrap: break-word;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -13,7 +13,13 @@
     margin: 0 auto;
     box-sizing: border-box;
     margin-top: 20px;
-    transition: all 0.2s ease-in;
+    /* transition: all 0.2s ease-in; */
+    transition: box-shadow 0.2s ease-in-out;
+  &:hover {
+    -webkit-box-shadow: 0px 0px 13px 1px rgba(237, 44, 10, 0.985);
+    -moz-box-shadow: 0px 0px 13px 1px rgba(237, 44, 10, 0.985);
+    box-shadow: 0px 0px 13px 1px rgba(237, 44, 10, 0.985);
+  }
     @media (max-width: 620px) {
       max-width: 80%;
     }
@@ -21,9 +27,9 @@
   /* .card:hover {
     zoom: 1;
   } */
-   .card:hover {
+   /* .card:hover {
    transform: scale(1.1, 1.1);
-  }
+  } */
   
   .cardImg{
     max-width: 100%; /* Set the width to 250px */

@@ -35,7 +35,7 @@ export const GameTrailer = ({ gameId }: Props) => {
 
  <video className="game-video" src={first.data[480]}
   poster={first.preview} controls
-  ></video>):<div className="game-video-null"> No video Available</div>
+  ></video>):null;
 
   
 };

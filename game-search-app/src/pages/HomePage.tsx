@@ -1,7 +1,9 @@
+import ClearFiltersButton from '../components/ClearFilterComponent/ClearFilterButton';
 import GameHeading from '../components/GameHeading/GameHeading';
 import GamesSection from '../components/MainContent/GamesSection';
 import GenreList from '../components/MainContent/GenreList';
 import PlatformSelector from '../components/PlatformSelector/PlatformSelector';
+import '../index.css';
 
 function HomePage() {
   return (
@@ -9,7 +11,10 @@ function HomePage() {
       <GenreList />
       <div>
         <GameHeading />
-        <PlatformSelector />
+        <div className='filters'>
+          <PlatformSelector />
+          <ClearFiltersButton/>
+        </div>
         <GamesSection />
       </div>
     </div>

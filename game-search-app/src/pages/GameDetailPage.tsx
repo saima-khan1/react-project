@@ -9,6 +9,8 @@ import { GameTrailer } from '../components/GameTrailer';
 import LoadingSpinner from '../components/SkeletonComponent/LoadingSpinner';
 import GameScreenshots from '../components/GameScreenshots';
 import '../index.css';
+import BreadCrumb from '../components/BreadCrumb/BreadCrumb';
+
 
 const GameDetailPage = () => {
   const { slug } = useParams();
@@ -40,10 +42,16 @@ const GameDetailPage = () => {
     return <LoadingSpinner/>;
   }
 
+  const BreadcrumbItems = [
+    {label: 'Home', link: '/'},
+    {label: game.name},
+  ];
+
   return (
     <div className='gamedetail-grid'>
       <div className='gamedetail-right-col'>
         <h1 className='gamedetail-heading'>{game.name}</h1>
+        <BreadCrumb items={BreadcrumbItems}/>
         <ExpandableText>{game.description_raw}</ExpandableText>
         <GameAttributes game={game}/>
       </div>
