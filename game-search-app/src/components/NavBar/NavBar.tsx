@@ -20,7 +20,7 @@ const NavBar = () => {
     dispatch({ type: 'SET_SEARCH_TEXT', searchText });
   };
   return (
-    <div className="navbar"><Link to='http://localhost:5173/'>
+    <div className="navbar"><Link to='/'>
       <img className="navbar_logo" src={logo} alt="logo" /></Link>
       <SearchInput onSearch={handleSearch} />
       <ColorModeSwitch darkMode={darkMode} toggleMode={toggleMode} />
