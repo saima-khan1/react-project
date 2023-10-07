@@ -1,5 +1,10 @@
-const API_BASE_URL = 'https://api.rawg.io/api';
-const API_KEY = 'fa7efde0160b486e8403874e761f9d39';
+import.meta.env.VITE_API_BASE_URL;
+import.meta.env.VITE_API_KEY;
+
+const BASE_URL= import.meta.env.VITE_API_BASE_URL;
+const API_BASE_URL = BASE_URL;
+const VITE_API_KEY = import.meta.env.VITE_API_KEY;
+const API_KEY = VITE_API_KEY;
 
 interface ApiResponse<T> {
   data: T;

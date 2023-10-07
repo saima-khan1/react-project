@@ -16,7 +16,7 @@ const SearchInput = ({ onSearch }: Props) => {
       if (inputRef.current) {
         onSearch(inputRef.current.value);
         inputRef.current.value = '';
-        navigate('/');
+        navigate('/games');
       }
     },
     [onSearch, navigate]

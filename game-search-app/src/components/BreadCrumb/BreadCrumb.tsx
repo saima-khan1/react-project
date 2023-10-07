@@ -12,7 +12,6 @@ const BreadCrumb = ({items}:BreadCrumbProps) => {
           {item.link ? <a href={item.link}>{item.label}</a> : <span>{item.label}</span>}
           {index < items.length - 1 && <span className="separator">/</span>} 
         </li>))}
-
     </ol>
  </nav>
   )

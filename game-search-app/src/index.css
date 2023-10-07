@@ -1,4 +1,74 @@
+/*CSS for video on home page*/
+body{
+  background-color: black;
+  height: 100vh;
+}
+.home-page{
+  color:white;
+  background-color: black;
+  height: auto;
+  align-items: center;
+}
+.home-heading{
+  text-align: center;
+  padding: 40px;
+  margin:0px;
+  padding-bottom: 0;
+}
 
+
+.home-container{
+  display: flex;
+  flex-direction: column;
+background-color: black;
+  align-items: center;
+  padding: 50px;
+  padding-top: 0;
+}
+.welcome-details{
+  text-align: center;
+  padding: 20px;
+}
+.welcome-details p{
+  font-size: large;
+}
+.button-style{
+  padding:10px;
+  width: 300px;
+    color: #ffff;
+   background: -webkit-linear-gradient(0deg, #8490ff 0%, #62bdfc 100%);
+   line-height: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: none;
+    display: inline-block;
+    font-weight: 500;
+}
+.button-style a{
+  text-decoration: none;
+}
+
+.video-container {
+display: grid;  
+width: 100%;
+  height: auto;
+  justify-content: center;
+}
+.video-container video{
+  width: 100%;
+
+}
+  .content{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+    color: #ffff;
+    & h1{
+      color: #ffff;
+
+    }
+  }
   .main-conent {
     display: grid;
     width: 100%;

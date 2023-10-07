@@ -5,7 +5,6 @@ import closeIcon from '../../assets/Icons/closeicon.svg';
 const ClearFiltersButton = () => {
   const { state, dispatch } = useGame();
 
-  //const ClearFilter = state.platform || state.genre ? 'Clear Filters' : ``;
 
   const handleClearFilters = () => {
     // Dispatch actions to clear selected filters

@@ -8,20 +8,19 @@ export interface GameState {
   searchText: string;
 }
 
-// Define actions to update the game state
 type Action =
   | { type: 'SET_GENRE'; genre: Genre | null }
   | { type: 'SET_PLATFORM'; platform: Platform | null }
   | { type: 'SET_SEARCH_TEXT'; searchText: string };
 
-// Create the initial state
+
 const initialState: GameState = {
   genre: null,
   platform: null,
   searchText: '',
 };
 
-// Create a reducer function to handle state updates
+
 function gameReducer(state: GameState, action: Action): GameState {
   switch (action.type) {
     case 'SET_GENRE':
@@ -35,12 +34,11 @@ function gameReducer(state: GameState, action: Action): GameState {
   }
 }
 
-// Create a context to provide the state and dispatch function
 const GameContext = createContext<
   { state: GameState; dispatch: React.Dispatch<Action> } | undefined
 >(undefined);
 
-// Create a custom provider component to wrap your app
+
 const GameProvider = ({ children }: { children: ReactNode }) => {
   const [state, dispatch] = useReducer(gameReducer, initialState);
 
@@ -51,7 +49,7 @@ const GameProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-// Create a custom hook to access the state and dispatch function
+
 const useGame = () => {
   const context = useContext(GameContext);
   if (context === undefined) {
@@ -60,5 +58,5 @@ const useGame = () => {
   return context;
 };
 
-// eslint-disable-next-line react-refresh/only-export-components
+
 export { GameProvider, useGame };

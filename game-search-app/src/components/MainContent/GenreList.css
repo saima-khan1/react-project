@@ -41,5 +41,5 @@
     white-space: normal;
 }
 .genre-list button:hover{
-    text-decoration: underline;
+    text-decoration: underline rgba(237, 44, 10, 0.985);
 }

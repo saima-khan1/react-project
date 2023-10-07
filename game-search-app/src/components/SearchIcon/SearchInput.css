@@ -1,23 +1,4 @@
 /* Form.css */
-
-/* .search-input {
-    padding: 10px;
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    font-size: 16px;
-    margin: 10px;
-  } */
-  
-  /* If you want to add some additional styling when the input is focused */
-  /* .search-input:focus {
-    outline: none;
-    border-color: dodgerblue;
-    box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
-  } */
-  
-  /* SearchInput.css */
-
 .search-container {
     display: flex;
     justify-content: center;
@@ -31,24 +12,23 @@
   .search-box {
     display: flex;
     align-items: center;
-    background-color: #fff; /* Background color for the search box */
+    background-color: #fff; 
     border: 1px solid #ccc;
     border-radius: 20px;
     width: 100%;
   }
-  
   .search-input {
     padding: 10px;
     width: 100%;
-    border: none; /* Remove the border from the input */
+    border: none;
     font-size: 16px;
     outline: none;
     border-radius: 20px;
   }
-  
+ 
   .search-icon {
-    margin: 0 10px; /* Add some spacing between the icon and the input */
-    color: #aaa; /* Color of the icon */
+    margin: 0 10px; 
+    color: #aaa; 
   }
   .search-bar{
    width: 100%;

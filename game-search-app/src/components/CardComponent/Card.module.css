@@ -56,10 +56,6 @@
   .cardHeading img{
     margin-top: 5px;
   }
-  .platformIcon {
-    color: #898989;
-    background-color: red;
-  }
   .card h2 a{
     color: inherit;
     text-decoration: none;

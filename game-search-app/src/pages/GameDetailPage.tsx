@@ -29,21 +29,21 @@ const GameDetailPage = () => {
         setError(catchedError as Error);
       }
     }
-
     fetchGame();
   }, [slug]);
 
   if (error) {
-    return <div>{error.message}</div>;
+    return <div>{error.message}</div>
   }
 
   if (!game) {
             
-    return <LoadingSpinner/>;
+    return <LoadingSpinner/>
   }
 
   const BreadcrumbItems = [
     {label: 'Home', link: '/'},
+    {label: 'Games', link: '/games'},
     {label: game.name},
   ];
 
